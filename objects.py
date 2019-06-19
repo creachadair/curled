@@ -114,8 +114,8 @@ class CurlBase(object):
             if res == constants.CURLE_FAILED_INIT:
                 raise CURLVersionError(fn.__name__, res)
 
-            elif (fn is self._p_curl_easy_getinfo
-                  and res == constants.CURLE_BAD_FUNCTION_ARGUMENT):
+            elif (fn is self._p_curl_easy_getinfo and
+                  res == constants.CURLE_BAD_FUNCTION_ARGUMENT):
                 raise CURLVersionError(fn.__name__, res, args[0])
 
             else:

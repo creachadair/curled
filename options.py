@@ -150,8 +150,7 @@ option_type_map = {
     con.CURLOPT_APPEND: 'bool',
     con.CURLOPT_FTP_USE_EPRT: 'bool',
     con.CURLOPT_FTP_USE_EPSV: 'bool',
-    con.CURLOPT_FTP_CREATE_MISSING_DIRS:
-    'int',  # value in CURLFTP_CREATE_DIR_*
+    con.CURLOPT_FTP_CREATE_MISSING_DIRS: 'int',  # value in CURLFTP_CREATE_DIR_*
     con.CURLOPT_FTP_RESPONSE_TIMEOUT: 'int',  # seconds
     con.CURLOPT_FTP_ALTERNATIVE_TO_USER: 'cstring',
     con.CURLOPT_FTP_SKIP_PASV_IP: 'bool',
@@ -226,6 +225,6 @@ option_type_map = {
     con.CURLOPT_TELNETOPTIONS: 'strlist',
 }
 
-__all__ = ('option_type_map', )
+__all__ = ('option_type_map',)
 
 # Here there be dragons
