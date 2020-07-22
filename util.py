@@ -20,7 +20,6 @@ class url_result(object):
     .code       -- the response code from the server.
     .duration   -- how long the request took, in seconds (float).
     """
-
     def __init__(self, url):
         self.url = url
         self.actual_url = url

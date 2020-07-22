@@ -114,8 +114,8 @@ class CurlBase(object):
             if res == constants.CURLE_FAILED_INIT:
                 raise CURLVersionError(fn.__name__, res)
 
-            elif (fn is self._p_curl_easy_getinfo and
-                  res == constants.CURLE_BAD_FUNCTION_ARGUMENT):
+            elif (fn is self._p_curl_easy_getinfo
+                  and res == constants.CURLE_BAD_FUNCTION_ARGUMENT):
                 raise CURLVersionError(fn.__name__, res, args[0])
 
             else:
@@ -187,8 +187,8 @@ class CurlBase(object):
 
         lst = None
         for v in vs:
-            lst = ctypes.cast(
-                self._p_curl_slist_append(lst, v), ctypes.POINTER(curl_slist))
+            lst = ctypes.cast(self._p_curl_slist_append(lst, v),
+                              ctypes.POINTER(curl_slist))
 
         v = curl_null if lst is None else ctypes.cast(lst,
                                                       ctypes.c_void_p).value
@@ -312,7 +312,6 @@ class CurlBase(object):
 class Curl(CurlBase):
     """High-level interface to libcurl.
     """
-
     def version(self):
         """Returns a dictionary giving the versions of libcurl and its
         associated libraries currently in use.
@@ -345,8 +344,8 @@ class Curl(CurlBase):
                     'DEBUG', 'CURLDEBUG', 'ASYNCHDNS', 'SPNEGO', 'LARGEFILE',
                     'IDN', 'SSPI', 'CONV'):
             real_key = 'CURL_VERSION_%s' % key
-            feat[key] = bool(
-                info.contents.features & getattr(constants, real_key))
+            feat[key] = bool(info.contents.features
+                             & getattr(constants, real_key))
 
         # Unpack the supported protocols into a list
         out['protocols'] = proto = []

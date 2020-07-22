@@ -9,74 +9,42 @@
 import errno, os, sys
 
 SECTION_COMMENT = {
-    'CURLcode':
-    'Return codes from curl_easy_* functions',
-    'CURLFORMcode':
-    'Return codes for curl_formadd()',
-    'CURLSHcode':
-    'Return codes for curl_share_stopt()',
-    'CURLSHoption':
-    'Option codes for curl_share_setopt()',
-    'CURLformoption':
-    'Option codes for CURLFORM_ARRAY values',
-    'CURLoption':
-    'Option codes for curl_easy_setopt()',
-    'CURLversion':
-    'Version selectors for curl_version_info()',
-    'curlversioncodes':
-    'Bit masks for curl_version_info_data->features',
-    'curl_TimeCond':
-    'Option codes for CURLOPT_TIMECONDITION',
-    'curl_closepolicy':
-    'Option codes for CURLOPT_CLOSEPOLICY',
-    'curl_ftpauth':
-    'Option codes for CURLOPT_FTPSSLAUTH',
-    'curl_ftpccc':
-    'Option codes for CURLOPT_FTP_SSL_CCC',
-    'curl_ftpcreatedir':
-    'Option codes for CURLOPT_FTP_CREATE_MISSING_DIRS',
-    'curl_ftpmethod':
-    'Option codes for CURLOPT_FTP_FILEMETHOD',
+    'CURLcode': 'Return codes from curl_easy_* functions',
+    'CURLFORMcode': 'Return codes for curl_formadd()',
+    'CURLSHcode': 'Return codes for curl_share_stopt()',
+    'CURLSHoption': 'Option codes for curl_share_setopt()',
+    'CURLformoption': 'Option codes for CURLFORM_ARRAY values',
+    'CURLoption': 'Option codes for curl_easy_setopt()',
+    'CURLversion': 'Version selectors for curl_version_info()',
+    'curlversioncodes': 'Bit masks for curl_version_info_data->features',
+    'curl_TimeCond': 'Option codes for CURLOPT_TIMECONDITION',
+    'curl_closepolicy': 'Option codes for CURLOPT_CLOSEPOLICY',
+    'curl_ftpauth': 'Option codes for CURLOPT_FTPSSLAUTH',
+    'curl_ftpccc': 'Option codes for CURLOPT_FTP_SSL_CCC',
+    'curl_ftpcreatedir': 'Option codes for CURLOPT_FTP_CREATE_MISSING_DIRS',
+    'curl_ftpmethod': 'Option codes for CURLOPT_FTP_FILEMETHOD',
     'curl_infotype':
     'Specifies the kind of data passed to information_callback',
-    'curl_lock_access':
-    'Specifies lock access type for lock functions',
-    'curl_lock_data':
-    'Different data locks for a single share',
-    'curl_proxytype':
-    'Option codes for CURLOPT_PROXYTYPE',
-    'curl_usessl':
-    'Option codes for CURLOPT_USE_SSL',
-    'curlauth':
-    'Option codes for CURLOPT_HTTPAUTH',
-    'curlglobal':
-    'Flags for curl_global_init()',
-    'CURLINFO':
-    'Selector codes for curl_easy_getinfo()',
-    'curliocmd':
-    'Operation codes for ioctl callbacks',
-    'curlioerr':
-    'Return codes for ioctl callbacks',
-    'curlopttype':
-    'Option type codes',
-    'curlpause':
-    'Bit masks for curl_easy_pause()',
+    'curl_lock_access': 'Specifies lock access type for lock functions',
+    'curl_lock_data': 'Different data locks for a single share',
+    'curl_proxytype': 'Option codes for CURLOPT_PROXYTYPE',
+    'curl_usessl': 'Option codes for CURLOPT_USE_SSL',
+    'curlauth': 'Option codes for CURLOPT_HTTPAUTH',
+    'curlglobal': 'Flags for curl_global_init()',
+    'CURLINFO': 'Selector codes for curl_easy_getinfo()',
+    'curliocmd': 'Operation codes for ioctl callbacks',
+    'curlioerr': 'Return codes for ioctl callbacks',
+    'curlopttype': 'Option type codes',
+    'curlpause': 'Bit masks for curl_easy_pause()',
     'curlproto':
     'Option bitmasks for CURLOPT_PROTOCOLS and CURLOPT_REDIR_PROTOCOLS',
-    'curlsshauth':
-    'Option bitmasks for CURLOPT_SSH_AUTH_TYPES',
-    'curlsocktype':
-    'Socket type selector for sockopt callback',
-    'httpversion':
-    'Option codes for CURLOPT_HTTP_VERSION',
-    'ipresolve':
-    'Option codes for CURLOPT_IPRESOLVE',
-    'netrcoption':
-    'Option codes for CURLOPT_NETRC',
-    'redirflags':
-    'Option codes for CURLOPT_POSTREDIR',
-    'sslversion':
-    'Option codes for CURLOPT_SSLVERSION',
+    'curlsshauth': 'Option bitmasks for CURLOPT_SSH_AUTH_TYPES',
+    'curlsocktype': 'Socket type selector for sockopt callback',
+    'httpversion': 'Option codes for CURLOPT_HTTP_VERSION',
+    'ipresolve': 'Option codes for CURLOPT_IPRESOLVE',
+    'netrcoption': 'Option codes for CURLOPT_NETRC',
+    'redirflags': 'Option codes for CURLOPT_POSTREDIR',
+    'sslversion': 'Option codes for CURLOPT_SSLVERSION',
 }
 
 

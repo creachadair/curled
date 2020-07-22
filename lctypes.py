@@ -62,7 +62,6 @@ curl_slist._fields_ = [
 
 
 def type_setter(restype, *argtypes):
-
     def f(funcptr):
         funcptr.restype = restype
         funcptr.argtypes = argtypes
@@ -123,7 +122,8 @@ curl_headfunc_t = data_callback_t
 
 # For CURLOPT_DEBUGFUNCTION
 # int df(CURL *ch, curl_infotype t, char *data, size_t size, void *userdata)
-curl_debugfunc_t = CFUNCTYPE(c_int, curl_infotype, c_char_p, c_size_t, c_void_p)
+curl_debugfunc_t = CFUNCTYPE(c_int, curl_infotype, c_char_p, c_size_t,
+                             c_void_p)
 
 __all__ = (
     # Basic library types
